@@ -9,20 +9,20 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+    <p><i class="fas fa-university"></i> Econometrics/CS @ Tufts University</p>
+    <p><i class="fas fa-briefcase"></i> Ads Measurement Research @ Pinterest</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
@@ -31,7 +31,7 @@ Hi! My name is Isaac Herman, and this is my data science portfolio. I plan to ke
 
 I graduated from Tufts University in 2019 with a major in Quantitative Economics and a minor in Computer Science.
 
-From 2020 to 2025, I worked as a data analyst at Pinterest on the Ads Measurement Research team. My responsibilities included building internal tools for measurement analytics, conducting meta-analyses of various incrementality and experiment solutions, and performing ad-hoc analyses using Python and SQL.
+From 2020 to 2025, I worked as a data analyst at Pinterest on the Ads Measurement Research team. My responsibilities included building internal tools for measurement analytics, conducting meta-analyses of various incrementality and experiment solutions, and performing ad hoc analyses using Python and SQL.
 
 Currently, I am pursuing a master's degree in data science at _____ (institution to be decided). My interests lie in the fields of causal inference and experimentation.
 
