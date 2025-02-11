@@ -35,7 +35,7 @@ From 2020 to 2025, I worked as a data analyst at Pinterest on the Ads Measuremen
 
 Currently, I am pursuing a master's degree in data science at _____ (institution to be decided). My interests lie in the fields of causal inference and experimentation.
 
-When I'm not working, you can find me testing new recipes in the kitchen or taking pictures with my film camera. Check out my photo portfolio [here](isaacherman.com).
+When I'm not working, you can find me testing new recipes in the kitchen or taking pictures with my film camera. Check out my photo portfolio [here](https://www.isaacherman.com/).
 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
