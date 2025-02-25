@@ -38,6 +38,18 @@
         "Identified 300 advertisers at highest risk of signal loss from cookie deprecation and built dashboard to track adoption of cookieless products, ensuring continued visibility into $XXB of conversion value",
         "Developed internal tool for retail accounts to perform customer segmentation and calculate LTV along with XGBoost classification model to identify high-value customers for targeting purposes"
       ]
+    },
+    {
+      "organization": "SeatGeek",
+      "position": "Partner Analytics Intern",
+      "location": "New York, NY",
+      "url": "https://seatgeek.com/",
+      "startDate": "2019-06-01",
+      "endDate": "2019-08-30",
+      "highlights": [
+        "Implemented linear regression model to predict team ticketing revenue based on win-loss and market data",
+        "Built internal tool to scrape competitor pricing with Python"
+      ]
     }
   ],
   "volunteer": [
