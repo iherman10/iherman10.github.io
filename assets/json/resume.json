@@ -115,45 +115,38 @@
   "certificates": [
     {
       "name": "ML Specialization",
-      "date": "2023-06-23",
+      "date": "2023-06-26",
       "issuer": "Stanford University",
       "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/XZ9TT9268HVK",
       "icon": "fa-solid fa-laptop-code"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
+      "name": "Supervised Learning: Regression & Classification",
+      "date": "2023-01-17",
       "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "url": "https://www.coursera.org/account/accomplishments/certificate/NGJZ4J7C59AP",
+      "icon": "fa-solid fa-chart-line"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
+      "name": "Advanced Learning Algorithms",
+      "date": "2023-05-08",
       "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
+      "url": "https://www.coursera.org/account/accomplishments/certificate/Y4AQD6GQDES2",
+      "icon": "fa-solid fa-brain"
     },
     {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
+      "name": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+      "date": "2023-06-26",
       "issuer": "Stanford University",
       "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
+      "icon": "fa-solid fa-hexagon-nodes"
     },
     {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
+      "name": "Exploratory Data Analysis for Machine Learning",
+      "date": "2024-05-17",
+      "issuer": "IBM",
+      "url": "https://www.linkedin.com/learning/certificates/940c510a2ce0b81f0f573dcc02ffbc443beeb47701f2f822ef0875d50e7a054f",
+      "icon": "fa-solid fa-magnifying-glass"
     }
   ],
   "publications": [
