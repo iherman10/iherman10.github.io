@@ -145,8 +145,15 @@
       "name": "EDA for ML",
       "date": "2024-05-17",
       "issuer": "IBM",
-      "url": "https://www.linkedin.com/learning/certificates/940c510a2ce0b81f0f573dcc02ffbc443beeb47701f2f822ef0875d50e7a054f",
+      "url": "https://www.coursera.org/account/accomplishments/verify/KD8QM4HYS6DQ",
       "icon": "fa-solid fa-magnifying-glass"
+    },
+    {
+      "name": "Git Essentials",
+      "date": "2023-01-01",
+      "issuer": "LinkedIn",
+      "url": "https://www.linkedin.com/learning/certificates/940c510a2ce0b81f0f573dcc02ffbc443beeb47701f2f822ef0875d50e7a054f",
+      "icon": "fa-solid fa-git"
     }
   ],
   "publications": [
