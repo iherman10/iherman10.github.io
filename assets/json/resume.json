@@ -24,13 +24,19 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
+      "name": "Pinterest",
+      "position": "Data Analyst - Ads Measurement Research",
+      "url": "",
+      "startDate": "2020-01-01",
+      "endDate": "2025-04-11",
       "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "highlights": [
+        "Built privacy safe tool to estimate causal impact of ads without user-level data utilizing a Time-Based Regression and Geo Experiment framework, generated $XM incremental spend from advertisers",
+        "Engineered data pipeline to store metrics from advertising experiments, saving 50 hours of review time weekly and replacing over 10,000 separate reports with the company’s first central database of experimental results",
+        "Built dashboards to automate meta-analysis of advertising experiments using Inverse Variance Weighting methodology, enabled self-serve analysis and delivery of updated trends on a daily basis (instead of quarterly)",
+        "Identified 300 advertisers at highest risk of signal loss from cookie deprecation and built dashboard to track adoption of cookieless products, ensuring continued visibility into $XXB of conversion value",
+        "Developed internal tool for retail accounts to perform customer segmentation and calculate LTV along with XGBoost classification model to identify high-value customers for targeting purposes"
+      ]
     }
   ],
   "volunteer": [
