@@ -50,6 +50,32 @@
         "Implemented linear regression model to predict team ticketing revenue based on win-loss and market data",
         "Built internal tool to scrape competitor pricing with Python"
       ]
+    },
+    {
+      "organization": "LionBird Ventures",
+      "position": "Research Assistant",
+      "location": "Chicago, IL",
+      "url": "https://www.lionbird.com/",
+      "startDate": "2018-06-01",
+      "endDate": "2019-08-30",
+      "highlights": [
+        "Prepared market research reports and generated market penetration strategies for portfolio companies",
+        "Sourced deals at demo days and tech conferences, conducting due diligence to evaluate risk and value"
+      ]
+    },
+    {
+      "organization": "TAMID Group Chapter at Tufts University",
+      "position": "Cofounder, President",
+      "location": "Somerville, MA",
+      "url": "https://tamidgroup.org/",
+      "startDate": "2016-09-01",
+      "endDate": "2018-05-30",
+      "highlights": [
+        "Founded Tufts chapter of non-profit organization that provides students with business education, pro-bono consulting opportunities, and summer fellowships",
+        "Oversaw educational curriculum and member recruitment (100+ students)",
+        "Coordinated projects for data science, consulting, and equity research teams",
+        "Organized several guest speaking events and raised over $10,000 in chapter funding"
+      ]
     }
   ],
   "volunteer": [
