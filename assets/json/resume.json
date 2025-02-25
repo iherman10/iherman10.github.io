@@ -24,7 +24,7 @@
   },
   "work": [
     {
-      "organization": "Pinterest",
+      "name": "Pinterest",
       "position": "Data Analyst - Ads Measurement Research",
       "location": "New York, NY",
       "url": "https://www.pinterest.com/",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "organization": "SeatGeek",
+      "name": "SeatGeek",
       "position": "Partner Analytics Intern",
       "location": "New York, NY",
       "url": "https://seatgeek.com/",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "organization": "LionBird Ventures",
+      "name": "LionBird Ventures",
       "position": "Research Assistant",
       "location": "Chicago, IL",
       "url": "https://www.lionbird.com/",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "organization": "TAMID Group Chapter at Tufts University",
+      "name": "TAMID Group Chapter at Tufts University",
       "position": "Cofounder, President",
       "location": "Somerville, MA",
       "url": "https://tamidgroup.org/",
