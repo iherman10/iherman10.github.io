@@ -121,7 +121,7 @@
       "icon": "fa-solid fa-laptop-code"
     },
     {
-      "name": "Supervised Learning: Regression & Classification",
+      "name": "Regression & Classification",
       "date": "2023-01-17",
       "issuer": "Stanford University",
       "url": "https://www.coursera.org/account/accomplishments/certificate/NGJZ4J7C59AP",
@@ -135,14 +135,14 @@
       "icon": "fa-solid fa-brain"
     },
     {
-      "name": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+      "name": "Recommenders & RL",
       "date": "2023-06-26",
       "issuer": "Stanford University",
-      "url": "https://example.com",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/SNZPKFH7ZTW7",
       "icon": "fa-solid fa-hexagon-nodes"
     },
     {
-      "name": "Exploratory Data Analysis for Machine Learning",
+      "name": "EDA for ML",
       "date": "2024-05-17",
       "issuer": "IBM",
       "url": "https://www.linkedin.com/learning/certificates/940c510a2ce0b81f0f573dcc02ffbc443beeb47701f2f822ef0875d50e7a054f",
