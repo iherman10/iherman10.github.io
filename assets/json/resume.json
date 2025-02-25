@@ -114,11 +114,11 @@
   ],
   "certificates": [
     {
-      "name": "Machine Learning Specialization",
+      "name": "ML Specialization",
       "date": "2023-06-23",
       "issuer": "Stanford University",
       "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/XZ9TT9268HVK",
-      "icon": "fa-solid fa-head-side-gear"
+      "icon": "fa-solid fa-laptop-code"
     },
     {
       "name": "Quantum Computing",
