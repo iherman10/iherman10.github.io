@@ -26,10 +26,10 @@
     {
       "name": "Pinterest",
       "position": "Data Analyst - Ads Measurement Research",
-      "url": "",
+      "url": "https://www.pinterest.com/",
       "startDate": "2020-01-01",
       "endDate": "2025-04-11",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "summary": "",
       "highlights": [
         "Built privacy safe tool to estimate causal impact of ads without user-level data utilizing a Time-Based Regression and Geo Experiment framework, generated $XM incremental spend from advertisers",
         "Engineered data pipeline to store metrics from advertising experiments, saving 50 hours of review time weekly and replacing over 10,000 separate reports with the company’s first central database of experimental results",
