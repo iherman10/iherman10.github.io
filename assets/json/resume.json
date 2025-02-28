@@ -181,17 +181,19 @@
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "name": "Programming",
+      "icon": "fa-solid fa-code",
+      "keywords": ["Python", "Pandas", "NumPy", "SQL", "SparkSQL", "Git", "Jupyter Notebooks"]
+    },
+    {
+      "name": "Analytics/ML",
+      "icon": "fa-solid fa-chart-simple",
+      "keywords": ["scikit-learn", "Experimental Design"]
+    },
+    {
+      "name": "Data Visualization",
+      "icon": "fa-solid fa-chart-area",
+      "keywords": ["Matplotlib", "Seaborn", "Tableau", "Apache Superset"]
     }
   ],
   "languages": [
