@@ -31,7 +31,7 @@ Hi! My name is Isaac Herman, and this is my data science portfolio. I plan to ke
 
 I graduated from Tufts University in 2019 with a major in Quantitative Economics and a minor in Computer Science.
 
-From 2020 to 2025, I worked as a data analyst at Pinterest on the Ads Measurement Research team. My responsibilities included building internal tools for measurement analytics, conducting meta-analyses of various incrementality and experiment solutions, and performing ad hoc analyses using Python and SQL.
+From 2020 to 2025, I worked as a data analyst at Pinterest on the Ads Measurement Research team. My responsibilities included building internal tools for measurement analytics and conducting meta-analyses of various incrementality and experiment solutions.
 
 Currently, I am pursuing a master's degree in data science at The University of Pennsylvania. My interests lie in the fields of causal inference and experimentation.
 
