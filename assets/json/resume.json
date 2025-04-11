@@ -80,6 +80,14 @@
   ],
   "education": [
     {
+      "institution": "University of Pennsylvania",
+      "location": "Philadelphia, PA",
+      "url": "https://dats.seas.upenn.edu/",
+      "area": "Master of Science in Engineering in Data Science",
+      "studyType": "M.S.E.",
+      "startDate": "2025-08-01"
+    },
+    {
       "institution": "Tufts University",
       "location": "Somerville, MA",
       "url": "https://www.tufts.edu/",
