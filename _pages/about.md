@@ -12,7 +12,7 @@ profile:
     <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
     <p><i class="fas fa-university"></i> MSE Data Science @ UPenn</p>
     <p><i class="fas fa-briefcase"></i> Analytics @ Pinterest</p>
-    <p><i class="fas fa-university"></i> Econometrics/CS @ Tufts</p>
+    <p><i class="fas fa-university"></i> BS Quant Econ + CS @ Tufts</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
