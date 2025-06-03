@@ -390,7 +390,7 @@ ninja.data = [{
           title: 'Air Quality Geo Experiments',
           description: "Applying a geo experiment methodology to estimate causal impact of worsening air quality on health outcomes in NYC.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/geo_experiment_aqi/";
+              window.location.href = "/projects/air_quality_geo_experiments/";
             },},{
         id: 'social-email',
         title: 'email',
