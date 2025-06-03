@@ -2,7 +2,7 @@
 layout: page
 title: Air Quality Geo Experiments
 description: Applying a geo experiment methodology to estimate causal impact of worsening air quality on health outcomes in NYC.
-img: assets/img/air_quality_geo_experiments/cover.jpeg
+img: assets/img/air_quality_geo_experiments/cover.png
 importance: 1
 category: work
 related_publications: true
@@ -16,7 +16,7 @@ Make your photos 1/3, 2/3, or full width.
 
 To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
-    ---
+    ---$$
     layout: page
     title: project
     description: a project with a background image
