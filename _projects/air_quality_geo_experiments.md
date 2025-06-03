@@ -2,7 +2,7 @@
 layout: page
 title: Air Quality Geo Experiments
 description: Applying a geo experiment methodology to estimate causal impact of worsening air quality on health outcomes in NYC.
-img: assets/img/12.jpg
+img: assets/img/air_quality_geo_experiments/cover.jpeg
 importance: 1
 category: work
 related_publications: true
