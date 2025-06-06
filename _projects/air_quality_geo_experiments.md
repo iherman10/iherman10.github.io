@@ -10,7 +10,7 @@ related_publications: true
 
 ## TL;DR
 
-This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate (0.18 additional ED visits per 1-point AQI increase), the confidence interval includes zero—indicating the result is not statistically significant. Data limitations and weak pre-treatment matching likely impacted the estimate’s precision.
+This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate (0.18 additional ED visits per 1-point AQI increase), the confidence interval includes zero, indicating the result is not statistically significant. Data limitations and weak pre-treatment matching likely impacted the estimate’s precision.
 
 ## Background
 
