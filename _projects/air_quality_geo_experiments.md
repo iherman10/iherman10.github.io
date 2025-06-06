@@ -8,11 +8,11 @@ category: work
 related_publications: true
 ---
 
-## TL;DR
+## **TL;DR**
 
 This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate (0.18 additional ED visits per 1-point AQI increase), the confidence interval includes zero, indicating the result is not statistically significant. Data limitations and weak pre-treatment matching likely impacted the estimate’s precision.
 
-## Background
+## **Background**
 
 As the climate crisis worsens, air quality is becoming an increasingly urgent concern worldwide. Rising temperatures, more frequent storms, and intensifying wildfires all contribute to deteriorating air conditions. It is well documented that declines in air quality impact both short- and long-term public health. In particular, elevated concentrations of PM2.5, fine particulate matter measuring 2.5 micrometers or less, have been linked to a range of respiratory and cardiovascular problems. These microscopic particles can be inhaled deeply into the lungs, posing serious health risks.
 
@@ -22,7 +22,7 @@ While interactive maps offer accessible visualizations, I had never delved into 
 
 ---
 
-## Inspiration
+## **Inspiration**
 
 While at Pinterest, I worked primarily on marketing attribution, particularly incremental attribution, determining whether ads shown on the platform actually caused users to purchase a product. If users were going to purchase anyway, the ad had no incremental effect. However, proving that ads _caused_ purchases using data is extremely powerful.
 
@@ -40,7 +40,7 @@ In 2017, Google published _Estimating Ad Effectiveness using Geo Experiments in 
 
 ---
 
-## Approach
+## **Approach**
 
 The TBR framework from Google seemed well-suited for estimating the causal impact of poor air quality on public health. Instead of ad spend as the treatment and sales revenue as the outcome, I substituted AQI as the treatment and emergency department (ED) visits for respiratory issues as the outcome. Since it's not feasible (or ethical) to deliberately manipulate air quality, I sought out natural experiments, instances where AQI in one geographic area suddenly diverges from a nearby matched area, likely due to localized events such as wildfires or wind shifts.
 
@@ -50,7 +50,7 @@ In marketing, a key outcome is incremental return on ad spend (iROAS): how much 
 
 ---
 
-## Data
+## **Data**
 
 To perform this analysis, I needed two types of data:
 
@@ -72,7 +72,7 @@ The SSD health data was more difficult to access. There was no API, and the Tabl
 
 ---
 
-## Exploratory Findings
+## **Exploratory Findings**
 
 Before modeling, I performed exploratory data analysis (EDA) to validate assumptions and better understand patterns, many of which aligned with anecdotal observations from years of casually monitoring PurpleAir maps.
 
@@ -94,7 +94,7 @@ The SSD health data was also noisy, and again I used LOWESS smoothing. For geo e
 
 ---
 
-## Final Dataset
+## **Final Dataset**
 
 The final dataset consists of daily borough-level records, each with the average AQI and total ED visits due to asthma or respiratory symptoms. The structure is simple but sufficient.
 
@@ -102,7 +102,7 @@ The final dataset consists of daily borough-level records, each with the average
 
 ---
 
-## Analysis
+## **Analysis**
 
 ### Identify Natural Experiments
 
@@ -149,7 +149,7 @@ The result: a ratio of 0.18 ED visits per AQI point, with a 95% CI of [-1.09, 1.
 
 ---
 
-## Takeaways
+## **Takeaways**
 
 The primary limitation was the weaker-than-expected relationship between Bronx and Queens ED visits. This may stem from:
 
