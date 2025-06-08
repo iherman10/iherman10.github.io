@@ -41,7 +41,7 @@ In recent years, growing privacy constraints have limited access to user-level d
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/geo_experiment.png" title="conversion lift" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/geo_experiment.png" title="geo experiment" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -50,7 +50,17 @@ In recent years, growing privacy constraints have limited access to user-level d
 
 In 2017, Google published _Estimating Ad Effectiveness using Geo Experiments in a Time-Based Regression Framework_ (Kerman, Wang, Vaver), which outlines an approach using Time-Based Regression (TBR). This methodology models pre-treatment time series data to predict counterfactual outcomes, enabling estimation of cumulative treatment effects, even with as few as one test and one control region.
 
-[Show screenshot from Google Paper]
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/air_quality_geo_experiments/tbr_1.png" title="geo based regression" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/air_quality_geo_experiments/tbr_2.png" title="time based regression" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Geo-Based Regression (GBR) and Time-Based Regression (TBR) (source: Google)
+</div>
 
 ---
 
