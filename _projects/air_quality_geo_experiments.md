@@ -120,7 +120,11 @@ Before modeling, I performed exploratory data analysis (EDA) to validate assumpt
 
 At the CBSA level, I examined the 20 most populous areas and grouped them by region. Western CBSAs exhibited more AQI outlier days, likely due to wildfires and extreme weather, while Southeast CBSAs had lower and more stable AQI levels.
 
-[Show time series of all regions grouped out]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/cbsa_daily_data.png" title="daily cbsa data from aqs" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 Seasonally, AQI peaks in the summer months, with more extreme fluctuations. This is consistent with literature showing that sunlight and heat accelerate the formation of ground-level ozone, while stagnant air traps pollutants. Wildfires also tend to peak in the summer.
 
@@ -140,7 +144,7 @@ The SSD health data was also noisy, and again I used LOWESS smoothing. For geo e
 
 The final dataset consists of daily borough-level records, each with the average AQI and total ED visits due to asthma or respiratory symptoms. The structure is simple but sufficient.
 
-[Show info of data_final dataset]
+[Show info of data_final dataset]$$
 
 ---
 
