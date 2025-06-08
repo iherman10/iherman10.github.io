@@ -82,6 +82,15 @@ To perform this analysis, I needed two types of data:
 
 The EPA’s Air Quality System (AQS) provides daily summary data on pollutants and meteorological conditions. I accessed this data via the AQS REST API, which offered flexible, reproducible data collection.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/epa_map.png" title="airnow map" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Interactive map of air quality data from EPA's Air Quality System (AQS) (source: EPA)
+</div>
+
 ### Health Outcome Data
 
 I used the NYC Department of Health's Syndromic Surveillance Data (SSD), which reports daily ED visits for asthma, respiratory disease, and other conditions. This dataset, covering all NYC ED visits from 2016 onward, can be filtered by zip code and age group. One limitation: the data reflects patient-reported symptoms rather than confirmed diagnoses.
