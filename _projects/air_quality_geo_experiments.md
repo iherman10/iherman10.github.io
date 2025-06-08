@@ -97,6 +97,15 @@ I used the NYC Department of Health's Syndromic Surveillance Data (SSD), which r
 
 Ideally, both datasets should be at the daily level to support time-series modeling.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ssd.png" title="syndromic surveillance data" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Syndromic Surveillance Data (SSD) Tableau dashboard (source: NYC Dept. of Health)
+</div>
+
 ### Notes on the Data
 
 The AQS API was remarkably user-friendly and allowed bulk requests without apparent rate limits. Initially, I collected data at the CBSA level but later pivoted to site-level data focused on NYC boroughs after encountering inconsistencies in national health outcome data. This allowed me to build borough-level daily AQI datasets.
