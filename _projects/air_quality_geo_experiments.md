@@ -39,7 +39,14 @@ Typically, this kind of causal inference is achieved through large-scale randomi
 
 In recent years, growing privacy constraints have limited access to user-level data, making traditional RCTs more difficult to conduct. This has led to greater interest in geo experiments, or matched market tests. Geo experiments measure causal impact by comparing outcomes across non-overlapping geographic regions that are matched based on similar pre-treatment characteristics. One region in each pair receives the treatment, while the other serves as a control. This structure helps isolate treatment effects while accounting for local variation. Notably, Google and Meta have each released open-source tools for this purpose, `matched_markets` and `GeoLift`, respectively.
 
-[Show picture of geo experiment logic]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/geo_experiment.png" title="conversion lift" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Geo experiment logic (source: Wayfair)
+</div>
 
 In 2017, Google published _Estimating Ad Effectiveness using Geo Experiments in a Time-Based Regression Framework_ (Kerman, Wang, Vaver), which outlines an approach using Time-Based Regression (TBR). This methodology models pre-treatment time series data to predict counterfactual outcomes, enabling estimation of cumulative treatment effects, even with as few as one test and one control region.
 
