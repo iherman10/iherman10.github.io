@@ -125,6 +125,9 @@ At the CBSA level, I examined the 20 most populous areas and grouped them by reg
         {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/cbsa_daily_data.png" title="daily cbsa aqi data from aqs" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+<div class="caption">
+    Within each regional subplot are multiple time series for each CBSA within that region
+</div>
 
 Seasonally, AQI peaks in the summer months, with more extreme fluctuations. This is consistent with literature showing that sunlight and heat accelerate the formation of ground-level ozone, while stagnant air traps pollutants. Wildfires also tend to peak in the summer.
 
