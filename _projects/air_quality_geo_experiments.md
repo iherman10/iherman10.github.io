@@ -122,7 +122,7 @@ At the CBSA level, I examined the 20 most populous areas and grouped them by reg
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/cbsa_daily_data.png" title="daily cbsa data from aqs" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/cbsa_daily_data.png" title="daily cbsa aqi data from aqs" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -130,7 +130,11 @@ Seasonally, AQI peaks in the summer months, with more extreme fluctuations. This
 
 In the New York region, this seasonal AQI elevation recurs annually. To better visualize this in noisy data, I applied LOWESS smoothing.
 
-[Show NY area stacked time series of years]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ny_smoothed.png" title="lowess smoothed ny aqi data" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 At the borough level, Brooklyn and Manhattan had substantial missing AQI data, so I focused on the Bronx and Queens. Though proper market-matching wasn’t conducted here, these two boroughs were selected based on data completeness.
 
