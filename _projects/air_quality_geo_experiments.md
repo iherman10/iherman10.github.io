@@ -2,7 +2,7 @@
 layout: page
 title: Air Quality Geo Experiments
 description: Applying a geo experiment methodology to estimate causal impact of worsening air quality on health outcomes in NYC.
-img: assets/img/air_quality_geo_experiments/cover.jpeg
+img: assets/img/air_quality_geo_experiments/cover.png
 importance: 1
 category: work
 related_publications: true
@@ -28,7 +28,14 @@ While at Pinterest, I worked primarily on marketing attribution, particularly in
 
 Typically, this kind of causal inference is achieved through large-scale randomized controlled trials (RCTs), in which one group sees ads (treatment) and another does not (control), and their subsequent behaviors are compared.
 
-[Show diagram of conversion lift study, maybe from Facebook]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/meta_conversion_lift.png" title="conversion lift" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Conversion lift experiment logic (source: Meta)
+</div>
 
 In recent years, growing privacy constraints have limited access to user-level data, making traditional RCTs more difficult to conduct. This has led to greater interest in geo experiments, or matched market tests. Geo experiments measure causal impact by comparing outcomes across non-overlapping geographic regions that are matched based on similar pre-treatment characteristics. One region in each pair receives the treatment, while the other serves as a control. This structure helps isolate treatment effects while accounting for local variation. Notably, Google and Meta have each released open-source tools for this purpose, `matched_markets` and `GeoLift`, respectively.
 
