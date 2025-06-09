@@ -254,15 +254,6 @@ Counterfactuals were generated across pre-test, test, and cooldown windows. Mini
 
 The AQI model had a very high R² of 0.98, indicating a robust counterfactual. The ED visit model had a more modest R² of 0.60, which, although statistically significant, suggests greater uncertainty and wider confidence intervals around causal estimates.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels.png" title="incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
 ### Estimate Effects
 
 Causal effects are summarized with three visuals:
@@ -271,7 +262,29 @@ Causal effects are summarized with three visuals:
 2. **Pointwise differences**
 3. **Cumulative effect** over test + cooldown
 
-[Show zoomed in three-panel visuals for both AQI and ED visits]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels.png" title="incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels_zoomed.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Counterfactual and incrementality results for AQI data, zoomed in results on right for clarity
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels.png" title="incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels_zoomed.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Counterfactual and incrementality results for ED visit data, zoomed in results on right for clarity
+</div>
 
 The result: a ratio of 0.18 ED visits per AQI point, with a 95% CI of [-1.09, 1.44]. Though the point estimate is positive, the confidence interval includes zero, indicating no statistically significant effect.
 
