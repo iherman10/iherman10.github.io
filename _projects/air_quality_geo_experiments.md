@@ -254,7 +254,14 @@ Counterfactuals were generated across pre-test, test, and cooldown windows. Mini
 
 The AQI model had a very high R² of 0.98, indicating a robust counterfactual. The ED visit model had a more modest R² of 0.60, which, although statistically significant, suggests greater uncertainty and wider confidence intervals around causal estimates.
 
-[Show side by side full time series of counterfactuals for both health outcomes and air quality]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels.png" title="incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ### Estimate Effects
 
