@@ -267,7 +267,7 @@ Causal effects are summarized with three visuals:
         {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels.png" title="incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels_zoomed.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/aqi_panels_zoomed.png" title="zoomed in incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -276,10 +276,10 @@ Causal effects are summarized with three visuals:
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels.png" title="incrementality results for aqi" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels_zoomed.png" title="incrementality results for ed" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_panels_zoomed.png" title="zoomed in incrementality results for ed" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -288,7 +288,11 @@ Causal effects are summarized with three visuals:
 
 The result: a ratio of 0.18 ED visits per AQI point, with a 95% CI of [-1.09, 1.44]. Though the point estimate is positive, the confidence interval includes zero, indicating no statistically significant effect.
 
-[Show final visualization]
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/incremental_estimate.png" title="final incremental estimate" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ---
 
