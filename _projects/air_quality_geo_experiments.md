@@ -143,9 +143,11 @@ At the borough level, Brooklyn and Manhattan had substantial missing AQI data, s
 
 The SSD health data was also noisy, and again I used LOWESS smoothing. For geo experiments, the quality of causal estimates depends on how well the pre-treatment time series from control and treatment geographies align. Encouragingly, Bronx and Queens ED visit trends followed each other closely.
 
-[Show time series of Bronx vs. Queens ED visits and LOWESS smoothing]
-
----
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/air_quality_geo_experiments/ed_visits_smoothed.png" title="lowess smoothed ny ed visit data" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ## **Final Dataset**
 
