@@ -153,9 +153,19 @@ The SSD health data was also noisy, and again I used LOWESS smoothing. For geo e
 
 The final dataset consists of daily borough-level records, each with the average AQI and total ED visits due to asthma or respiratory symptoms. The structure is simple but sufficient.
 
-[Show info of data_final dataset]$$
-
----
+```c
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 376 entries, 2023-02-09 to 2024-02-19
+Data columns (total 4 columns):
+ #   Column      Non-Null Count  Dtype
+---  ------      --------------  -----
+ 0   bronx_aqi   376 non-null    float64
+ 1   queens_aqi  376 non-null    float64
+ 2   bronx_ed    376 non-null    float64
+ 3   queens_ed   376 non-null    float64
+dtypes: float64(4)
+memory usage: 14.7 KB
+```
 
 ## **Analysis**
 
