@@ -153,7 +153,7 @@ The SSD health data was also noisy, and again I used LOWESS smoothing. For geo e
 
 The final dataset consists of daily borough-level records, each with the average AQI and total ED visits due to asthma or respiratory symptoms. The structure is simple but sufficient.
 
-```c
+```
 <class 'pandas.core.frame.DataFrame'>
 DatetimeIndex: 376 entries, 2023-02-09 to 2024-02-19
 Data columns (total 4 columns):
@@ -188,7 +188,65 @@ A three-day period beginning on 2024-02-10 stood out as relatively clean.
 
 I trained two linear regression models using pre-test data (Bronx as predictor, Queens as target) to forecast counterfactual values for AQI and ED visits in Queens.
 
-[Show screenshots of OLS regression results for both counterfactual models]
+Here are the results of the model for AQI data:
+
+```
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:             queens_aqi   R-squared:                       0.978
+Model:                            OLS   Adj. R-squared:                  0.978
+Method:                 Least Squares   F-statistic:                 1.631e+04
+Date:                Sun, 08 Jun 2025   Prob (F-statistic):          2.23e-304
+Time:                        23:14:28   Log-Likelihood:                -982.93
+No. Observations:                 366   AIC:                             1970.
+Df Residuals:                     364   BIC:                             1978.
+Df Model:                           1
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.3103      0.391     -0.794      0.428      -1.079       0.458
+bronx_aqi      1.0428      0.008    127.700      0.000       1.027       1.059
+==============================================================================
+Omnibus:                       18.499   Durbin-Watson:                   1.846
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               44.825
+Skew:                          -0.165   Prob(JB):                     1.85e-10
+Kurtosis:                       4.682   Cond. No.                         101.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
+
+And here are the results of the second model for ED visit data:
+
+```
+  OLS Regression Results
+==============================================================================
+Dep. Variable:              queens_ed   R-squared:                       0.604
+Model:                            OLS   Adj. R-squared:                  0.603
+Method:                 Least Squares   F-statistic:                     554.8
+Date:                Sun, 08 Jun 2025   Prob (F-statistic):           3.48e-75
+Time:                        23:14:28   Log-Likelihood:                -1467.9
+No. Observations:                 366   AIC:                             2940.
+Df Residuals:                     364   BIC:                             2948.
+Df Model:                           1
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         10.1533      2.576      3.941      0.000       5.087      15.219
+bronx_ed       0.6247      0.027     23.555      0.000       0.573       0.677
+==============================================================================
+Omnibus:                       11.289   Durbin-Watson:                   1.424
+Prob(Omnibus):                  0.004   Jarque-Bera (JB):               11.450
+Skew:                           0.419   Prob(JB):                      0.00326
+Kurtosis:                       3.223   Cond. No.                         358.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
 
 ### Generate Counterfactual Predictions
 
