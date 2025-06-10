@@ -8,26 +8,8 @@ category: work
 related_publications: true
 ---
 
-**Date published:** June 10, 2025
-
+**Published:** June 10, 2025
 **Code:** [Notebook on GitHub](https://github.com/iherman10/aqi_geo_experiments/blob/main/analysis.ipynb)
-
-- [**TL;DR**](#tldr)
-- [**Background**](#background)
-- [**Inspiration**](#inspiration)
-- [**Approach**](#approach)
-- [**Data**](#data)
-  - [Air Quality Data](#air-quality-data)
-  - [Health Outcome Data](#health-outcome-data)
-  - [Notes on the Data](#notes-on-the-data)
-- [**Exploratory Findings**](#exploratory-findings)
-- [**Final Dataset**](#final-dataset)
-- [**Analysis**](#analysis)
-  - [Identify Natural Experiments](#identify-natural-experiments)
-  - [Model Pretest Relationship](#model-pretest-relationship)
-  - [Generate Counterfactual Predictions](#generate-counterfactual-predictions)
-  - [Estimate Effects](#estimate-effects)
-- [**Takeaways**](#takeaways)
 
 ---
 
