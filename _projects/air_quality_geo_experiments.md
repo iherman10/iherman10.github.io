@@ -8,9 +8,11 @@ category: work
 related_publications: true
 ---
 
-**June 10, 2025**
+**Date published:** June 10, 2025
 
-**[GitHub](https://github.com/iherman10/aqi_geo_experiments/blob/main/analysis.ipynb)**
+**Code:** [Notebook on GitHub](https://github.com/iherman10/aqi_geo_experiments/blob/main/analysis.ipynb)
+
+---
 
 ## **TL;DR**
 
