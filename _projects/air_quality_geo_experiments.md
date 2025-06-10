@@ -55,7 +55,7 @@ In recent years, growing privacy constraints have limited access to user-level d
     Geo experiment logic (source: Wayfair)
 </div>
 
-In 2017, Google published _Estimating Ad Effectiveness using Geo Experiments in a Time-Based Regression Framework_ (Kerman, Wang, Vaver), which outlines an approach using Time-Based Regression (TBR). This methodology models pre-treatment time series data to predict counterfactual outcomes, enabling estimation of cumulative treatment effects, even with as few as one test and one control region.
+In 2017, Google published _Estimating Ad Effectiveness using Geo Experiments in a Time-Based Regression Framework_ {% cite kerman2017geo %}, which outlines an approach using Time-Based Regression (TBR). This methodology models pre-treatment time series data to predict counterfactual outcomes, enabling estimation of cumulative treatment effects, even with as few as one test and one control region.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
