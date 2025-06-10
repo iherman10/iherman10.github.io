@@ -12,6 +12,23 @@ related_publications: true
 
 **Code:** [Notebook on GitHub](https://github.com/iherman10/aqi_geo_experiments/blob/main/analysis.ipynb)
 
+- [**TL;DR**](#tldr)
+- [**Background**](#background)
+- [**Inspiration**](#inspiration)
+- [**Approach**](#approach)
+- [**Data**](#data)
+  - [Air Quality Data](#air-quality-data)
+  - [Health Outcome Data](#health-outcome-data)
+  - [Notes on the Data](#notes-on-the-data)
+- [**Exploratory Findings**](#exploratory-findings)
+- [**Final Dataset**](#final-dataset)
+- [**Analysis**](#analysis)
+  - [Identify Natural Experiments](#identify-natural-experiments)
+  - [Model Pretest Relationship](#model-pretest-relationship)
+  - [Generate Counterfactual Predictions](#generate-counterfactual-predictions)
+  - [Estimate Effects](#estimate-effects)
+- [**Takeaways**](#takeaways)
+
 ---
 
 ## **TL;DR**
@@ -24,7 +41,7 @@ This project explores whether worsening air quality causally increases emergency
 
 As the climate crisis worsens, air quality is becoming an increasingly urgent concern worldwide. Rising temperatures, more frequent storms, and intensifying wildfires all contribute to deteriorating air conditions. It is well documented that declines in air quality impact both short- and long-term public health. In particular, elevated concentrations of PM2.5, fine particulate matter measuring 2.5 micrometers or less, have been linked to a range of respiratory and cardiovascular problems. These microscopic particles can be inhaled deeply into the lungs, posing serious health risks.
 
-On a personal note, poor air quality has directly affected my life. A “bad air day” in 2020 triggered a prolonged asthma flare-up, my first since childhood, which led to lingering respiratory issues. Since then, I’ve become more vigilant about tracking air quality, often using sites platforms like [PurpleAir](https://map.purpleair.com/) to avoid flare-ups and observe patterns that tend to coincide with declines in air quality.
+On a personal note, poor air quality has directly affected my life. A “bad air day” in 2020 triggered a prolonged asthma flare-up, my first since childhood, which led to lingering respiratory issues. Since then, I’ve become more vigilant about tracking air quality, often using platforms like [PurpleAir](https://map.purpleair.com/) to avoid flare-ups and observe patterns that tend to coincide with declines in air quality.
 
 While interactive maps offer accessible visualizations, I had never delved into the underlying data. This project began with a question: Can I causally link decreases in air quality to negative health outcomes? While this question has been addressed extensively by experts, I saw an opportunity to explore it through a creative statistical lens, especially since much of the publicly cited air quality data tends to be correlational. Here, I set out to perform a true causal impact analysis.
 
