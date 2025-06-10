@@ -8,15 +8,21 @@ category: work
 related_publications: true
 ---
 
+**June 10, 2025**
+
+**[GitHub](https://github.com/iherman10/aqi_geo_experiments/blob/main/analysis.ipynb)**
+
 ## **TL;DR**
 
-This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate (0.18 additional ED visits per 1-point AQI increase), the confidence interval includes zero, indicating the result is not statistically significant. Data limitations and weak pre-treatment matching likely impacted the estimate’s precision.
+This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate for additional ED visists per 1-point AQI increase, it is not statistically significant. Going forward, improvements to the model might be made by addressing limitations present in health outcome data.
+
+---
 
 ## **Background**
 
 As the climate crisis worsens, air quality is becoming an increasingly urgent concern worldwide. Rising temperatures, more frequent storms, and intensifying wildfires all contribute to deteriorating air conditions. It is well documented that declines in air quality impact both short- and long-term public health. In particular, elevated concentrations of PM2.5, fine particulate matter measuring 2.5 micrometers or less, have been linked to a range of respiratory and cardiovascular problems. These microscopic particles can be inhaled deeply into the lungs, posing serious health risks.
 
-On a personal note, poor air quality has directly affected my life. A “bad air day” in 2020 triggered a prolonged asthma flare-up, my first since childhood, which led to lingering respiratory issues. Since then, I’ve become more vigilant about tracking air quality, often using sites like PurpleAir.com to avoid flare-ups and observe patterns that tend to coincide with declines in air quality.
+On a personal note, poor air quality has directly affected my life. A “bad air day” in 2020 triggered a prolonged asthma flare-up, my first since childhood, which led to lingering respiratory issues. Since then, I’ve become more vigilant about tracking air quality, often using sites platforms like [PurpleAir](https://map.purpleair.com/) to avoid flare-ups and observe patterns that tend to coincide with declines in air quality.
 
 While interactive maps offer accessible visualizations, I had never delved into the underlying data. This project began with a question: Can I causally link decreases in air quality to negative health outcomes? While this question has been addressed extensively by experts, I saw an opportunity to explore it through a creative statistical lens, especially since much of the publicly cited air quality data tends to be correlational. Here, I set out to perform a true causal impact analysis.
 
@@ -24,7 +30,7 @@ While interactive maps offer accessible visualizations, I had never delved into 
 
 ## **Inspiration**
 
-While at Pinterest, I worked primarily on marketing attribution, particularly incremental attribution, determining whether ads shown on the platform actually caused users to purchase a product. If users were going to purchase anyway, the ad had no incremental effect. However, proving that ads _caused_ purchases using data is extremely powerful.
+While at Pinterest, my work in analytics focused primarily on marketing attribution, particularly incremental attribution, determining whether ads shown on the platform actually caused users to purchase a product. If users were going to purchase anyway, the ad had no incremental effect. However, showing with data that ads _caused_ purchases is extremely powerful.
 
 Typically, this kind of causal inference is achieved through large-scale randomized controlled trials (RCTs), in which one group sees ads (treatment) and another does not (control), and their subsequent behaviors are compared.
 
@@ -37,7 +43,7 @@ Typically, this kind of causal inference is achieved through large-scale randomi
     Conversion lift experiment logic (source: Meta)
 </div>
 
-In recent years, growing privacy constraints have limited access to user-level data, making traditional RCTs more difficult to conduct. This has led to greater interest in geo experiments, or matched market tests. Geo experiments measure causal impact by comparing outcomes across non-overlapping geographic regions that are matched based on similar pre-treatment characteristics. One region in each pair receives the treatment, while the other serves as a control. This structure helps isolate treatment effects while accounting for local variation. Notably, Google and Meta have each released open-source tools for this purpose, `matched_markets` and `GeoLift`, respectively.
+In recent years, growing privacy constraints have limited access to user-level data, making traditional RCTs more difficult to conduct. This has led to greater interest in geo experiments, or matched market tests. Geo experiments measure causal impact by comparing outcomes across non-overlapping geographic regions that are matched based on similar pre-treatment characteristics. To isolate treatment effects, one region in each pair receives the treatment, while the other serves as a control. Notably, Google and Meta have each released open-source tools for this purpose, `matched_markets` and `GeoLift`, respectively.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -76,11 +82,11 @@ In marketing, a key outcome is incremental return on ad spend (iROAS): how much 
 
 ## **Data**
 
-To perform this analysis, I needed two types of data:
+To perform this analysis, I needed two types of data. Ideally, both datasets should be at the daily-level to support time-series modeling.
 
 ### Air Quality Data
 
-The EPA’s Air Quality System (AQS) provides daily summary data on pollutants and meteorological conditions. I accessed this data via the AQS REST API, which offered flexible, reproducible data collection.
+The EPA’s [Air Quality System (AQS)](https://aqs.epa.gov/aqsweb/documents/data_api.html) provides daily summary data on pollutants and meteorological conditions. I accessed this data via the AQS REST API.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -93,9 +99,7 @@ The EPA’s Air Quality System (AQS) provides daily summary data on pollutants a
 
 ### Health Outcome Data
 
-I used the NYC Department of Health's Syndromic Surveillance Data (SSD), which reports daily ED visits for asthma, respiratory disease, and other conditions. This dataset, covering all NYC ED visits from 2016 onward, can be filtered by zip code and age group. One limitation: the data reflects patient-reported symptoms rather than confirmed diagnoses.
-
-Ideally, both datasets should be at the daily level to support time-series modeling.
+I used the NYC Department of Health's [Syndromic Surveillance Data (SSD)](https://a816-health.nyc.gov/hdi/epiquery/visualizations?PageType=ps&PopulationSource=Syndromic), which reports daily ED visits for asthma, respiratory disease, and other conditions. This dataset, covering all NYC ED visits from 2016 onward, can be filtered by zip code and age group. It's important to note that this data reflects patient-reported symptons rather than confirmed diagnoses.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -108,7 +112,7 @@ Ideally, both datasets should be at the daily level to support time-series model
 
 ### Notes on the Data
 
-The AQS API was remarkably user-friendly and allowed bulk requests without apparent rate limits. Initially, I collected data at the CBSA level but later pivoted to site-level data focused on NYC boroughs after encountering inconsistencies in national health outcome data. This allowed me to build borough-level daily AQI datasets.
+The AQS API was remarkably user-friendly and allowed bulk requests without apparent rate limits. Initially, I collected data at the Core Based Statistical Area (CBSA)-level but later pivoted to site-level data focused on NYC boroughs after encountering inconsistencies in national health outcome data. This allowed me to build borough-level daily AQI datasets.
 
 The SSD health data was more difficult to access. There was no API, and the Tableau dashboard required manually downloading small batches of data, one zip code at a time. Without a scraping solution, it was infeasible to collect years of daily data to match the AQI dataset.
 
@@ -116,9 +120,9 @@ The SSD health data was more difficult to access. There was no API, and the Tabl
 
 ## **Exploratory Findings**
 
-Before modeling, I performed exploratory data analysis (EDA) to validate assumptions and better understand patterns, many of which aligned with anecdotal observations from years of casually monitoring PurpleAir maps.
+Before modeling, I performed some EDA to validate assumptions and better understand patterns, many of which aligned with anecdotal observations from years of casually monitoring PurpleAir maps.
 
-At the CBSA level, I examined the 20 most populous areas and grouped them by region. Western CBSAs exhibited more AQI outlier days, likely due to wildfires and extreme weather, while Southeast CBSAs had lower and more stable AQI levels.
+At the CBSA-level, I examined the 20 most populous US metro areas and grouped them by region (e.g. West, Northeast, etc.). Western CBSAs exhibited more AQI outlier days, likely due to wildfires and extreme weather, while Southeast CBSAs had lower and more stable AQI levels.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -129,9 +133,9 @@ At the CBSA level, I examined the 20 most populous areas and grouped them by reg
     Within each regional subplot are multiple time series for each CBSA within that region
 </div>
 
-Seasonally, AQI peaks in the summer months, with more extreme fluctuations. This is consistent with literature showing that sunlight and heat accelerate the formation of ground-level ozone, while stagnant air traps pollutants. Wildfires also tend to peak in the summer.
+Seasonally, AQI peaks in the summer months, with more extreme fluctuations. This is consistent with research showing that sunlight and heat accelerate the formation of ground-level ozone, while stagnant air traps pollutants. Wildfires also tend to peak in the summer.
 
-In the New York region, this seasonal AQI elevation recurs annually. To better visualize this in noisy data, I applied LOWESS smoothing.
+In the New York region, this AQI elevation during the summer months is fairly consistent year-over-year. To better visualize this in noisy data, I applied LOWESS smoothing.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -139,9 +143,9 @@ In the New York region, this seasonal AQI elevation recurs annually. To better v
     </div>
 </div>
 
-At the borough level, Brooklyn and Manhattan had substantial missing AQI data, so I focused on the Bronx and Queens. Though proper market-matching wasn’t conducted here, these two boroughs were selected based on data completeness.
+At the borough level, Brooklyn and Manhattan had substantial missing AQI data, so I focused on the Bronx and Queens. It's important to note that a core part of the geo experiment framework is market-matching; identifying pairs of geographic units that align on one or more characteristics to ensure that the experiment groups are balanced. For marketing experiments, it's completely realistic to assume that NY and LA might match based on purchase trends or user penetration statistics. But for this analysis, it makes more sense to compare areas that are geographically close to each other due to climate similarities. Thus, these two boroughs were selected as a result of their obvious proximity to one another and most importantly their data completeness.
 
-The SSD health data was also noisy, and again I used LOWESS smoothing. For geo experiments, the quality of causal estimates depends on how well the pre-treatment time series from control and treatment geographies align. Encouragingly, Bronx and Queens ED visit trends followed each other closely.
+The SSD health data was also noisy, although again I used LOWESS smoothing to visualize general trends over time. For geo experiments, the quality of causal estimates depends on how well the pre-treatment time series from control and treatment geographies align. Encouragingly, Bronx and Queens ED visit trends followed each other closely.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -151,7 +155,7 @@ The SSD health data was also noisy, and again I used LOWESS smoothing. For geo e
 
 ## **Final Dataset**
 
-The final dataset consists of daily borough-level records, each with the average AQI and total ED visits due to asthma or respiratory symptoms. The structure is simple but sufficient.
+The final dataset consists of daily borough-level records, each with the AQI and total ED visits due to asthma or respiratory symptoms. The model inputs are really quite simple.
 
 ```
 <class 'pandas.core.frame.DataFrame'>
@@ -250,7 +254,7 @@ Notes:
 
 ### Generate Counterfactual Predictions
 
-Counterfactuals were generated across pre-test, test, and cooldown windows. Minimal difference during the pre-test period validates model fit.
+Counterfactuals were generated across pre-test, test, and cooldown windows. Minimal difference during the pre-test period (i.e. centered around 0) validates model fit.
 
 The AQI model had a very high R² of 0.98, indicating a robust counterfactual. The ED visit model had a more modest R² of 0.60, which, although statistically significant, suggests greater uncertainty and wider confidence intervals around causal estimates.
 
