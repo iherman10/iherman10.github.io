@@ -310,3 +310,5 @@ The primary limitation was the weaker-than-expected relationship between Bronx a
 - Incomplete or noisy data that masks the true relationship
 
 While the adverse health impacts of PM2.5 are well-established, demonstrating this causal link at a borough-level scale using geo experiments is difficult. Data quality, availability, and geographic granularity present real challenges, ones that likely affect broader public health research as well.
+
+---
