@@ -16,7 +16,7 @@ related_publications: true
 
 ## **TL;DR**
 
-This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate for additional ED visists per 1-point AQI increase, it is not statistically significant. Going forward, improvements to the model might be made by addressing limitations present in health outcome data.
+This project explores whether worsening air quality causally increases emergency department visits for respiratory issues, using a geo experiment framework inspired by marketing attribution methods. By analyzing AQI and health data from the Bronx and Queens, and applying Google's Time-Based Regression (TBR) methodology, I attempt to quantify the causal effect of AQI spikes on health outcomes. While the model shows a positive point estimate for additional ED visits per 1-point AQI increase, it is not statistically significant. Going forward, improvements to the model might be made by addressing limitations present in health outcome data.
 
 ---
 
@@ -101,7 +101,7 @@ The EPA’s [Air Quality System (AQS)](https://aqs.epa.gov/aqsweb/documents/data
 
 ### Health Outcome Data
 
-I used the NYC Department of Health's [Syndromic Surveillance Data (SSD)](https://a816-health.nyc.gov/hdi/epiquery/visualizations?PageType=ps&PopulationSource=Syndromic), which reports daily ED visits for asthma, respiratory disease, and other conditions. This dataset, covering all NYC ED visits from 2016 onward, can be filtered by zip code and age group. It's important to note that this data reflects patient-reported symptons rather than confirmed diagnoses.
+I used the NYC Department of Health's [Syndromic Surveillance Data (SSD)](https://a816-health.nyc.gov/hdi/epiquery/visualizations?PageType=ps&PopulationSource=Syndromic), which reports daily ED visits for asthma, respiratory disease, and other conditions. This dataset, covering all NYC ED visits from 2016 onward, can be filtered by zip code and age group. It's important to note that this data reflects patient-reported symptoms rather than confirmed diagnoses.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -114,7 +114,7 @@ I used the NYC Department of Health's [Syndromic Surveillance Data (SSD)](https:
 
 ### Notes on the Data
 
-The AQS API was remarkably user-friendly and allowed bulk requests without apparent rate limits. Initially, I collected data at the Core Based Statistical Area (CBSA)-level but later pivoted to site-level data focused on NYC boroughs after encountering inconsistencies in national health outcome data. This allowed me to build borough-level daily AQI datasets.
+The AQS API was remarkably user-friendly and allowed bulk requests without apparent rate limits. Initially, I collected data at the Core Based Statistical Area (CBSA)-level, with the intention of assigning entire states/regions into treatment/control groups. However, I later pivoted to individual monitoring site-level data from NYC boroughs after encountering inconsistencies in national health outcome data. This allowed me to build a borough-level daily AQI dataset.
 
 The SSD health data was more difficult to access. There was no API, and the Tableau dashboard required manually downloading small batches of data, one zip code at a time. Without a scraping solution, it was infeasible to collect years of daily data to match the AQI dataset.
 
@@ -137,7 +137,7 @@ At the CBSA-level, I examined the 20 most populous US metro areas and grouped th
 
 Seasonally, AQI peaks in the summer months, with more extreme fluctuations. This is consistent with research showing that sunlight and heat accelerate the formation of ground-level ozone, while stagnant air traps pollutants. Wildfires also tend to peak in the summer.
 
-In the New York region, this AQI elevation during the summer months is fairly consistent year-over-year. To better visualize this in noisy data, I applied LOWESS smoothing.
+In the New York region specifically, this AQI elevation during the summer months is fairly consistent year-over-year. To better visualize this in noisy data, I applied LOWESS smoothing.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -145,7 +145,7 @@ In the New York region, this AQI elevation during the summer months is fairly co
     </div>
 </div>
 
-At the borough level, Brooklyn and Manhattan had substantial missing AQI data, so I focused on the Bronx and Queens. It's important to note that a core part of the geo experiment framework is market-matching; identifying pairs of geographic units that align on one or more characteristics to ensure that the experiment groups are balanced. For marketing experiments, it's completely realistic to assume that NY and LA might match based on purchase trends or user penetration statistics. But for this analysis, it makes more sense to compare areas that are geographically close to each other due to climate similarities. Thus, these two boroughs were selected as a result of their obvious proximity to one another and most importantly their data completeness.
+At the borough-level, Brooklyn and Manhattan had substantial missing AQI data, so I focused on the Bronx and Queens. It's important to note that a core part of the geo experiment framework is market-matching; identifying pairs of geographic units that align on one or more characteristics to ensure that the experiment groups are balanced. For marketing experiments, it's completely realistic to assume that NY and LA might match based on purchase trends or user penetration statistics. But for this analysis, it makes more sense to compare areas that are geographically close to each other due to climate similarities. Thus, these two boroughs were selected as a result of their obvious proximity to one another and most importantly their data completeness.
 
 The SSD health data was also noisy, although again I used LOWESS smoothing to visualize general trends over time. For geo experiments, the quality of causal estimates depends on how well the pre-treatment time series from control and treatment geographies align. Encouragingly, Bronx and Queens ED visit trends followed each other closely.
 
@@ -189,6 +189,8 @@ A three-day period beginning on 2024-02-10 stood out as relatively clean.
 - End date: February 12, 2024
 - Pre-test window: 365 days
 - Cooldown period: 7 days
+
+We use a 365-day pre-test window to build robust counterfactual models for both air quality and health outcomes, ensuring a solid baseline for comparison. A 7-day cooldown period follows the test window to account for any delayed effects in the response variable, which is especially important in public health contexts where lagged outcomes are common.
 
 ### Model Pretest Relationship
 
@@ -264,9 +266,9 @@ The AQI model had a very high R² of 0.98, indicating a robust counterfactual. T
 
 Causal effects are summarized with three visuals:
 
-1. **Observed vs. counterfactual**
-2. **Pointwise differences**
-3. **Cumulative effect** over test + cooldown
+1. **Observed vs. counterfactual:** Plot the observed metric for Queens (our treatment unit) against its counterfactual prediction, including a 95% confidence interval. This visualization shows the difference between what actually happened and what would have occurred in the absence of the intervention.
+2. **Pointwise differences:** Calculate the daily difference between observed and counterfactual values, again with 95% confidence intervals. These reflect the estimated incremental effect for each individual day.
+3. **Cumulative effect over test + cooldown:** Aggregate the daily incremental effects over the test and cooldown periods to estimate the total impact of the intervention across the full analysis window.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -292,6 +294,8 @@ Causal effects are summarized with three visuals:
     Counterfactual and incrementality results for ED visit data, zoomed in results on right for clarity
 </div>
 
+Once we’ve estimated cumulative effects for both AQI and ED visits, we calculate the pointwise unit ratio, essentially dividing the cumulative incremental ED visits by the cumulative increase in AQI. This is analogous to the iROAS metric in marketing, where the goal is to determine the return per unit of investment. In this context, it tells us: for every 1-point increase in AQI, how many additional ED visits occurred as a result?
+
 The result: a ratio of 0.18 ED visits per AQI point, with a 95% CI of [-1.09, 1.44]. Though the point estimate is positive, the confidence interval includes zero, indicating no statistically significant effect.
 
 <div class="row">
@@ -310,5 +314,3 @@ The primary limitation was the weaker-than-expected relationship between Bronx a
 - Incomplete or noisy data that masks the true relationship
 
 While the adverse health impacts of PM2.5 are well-established, demonstrating this causal link at a borough-level scale using geo experiments is difficult. Data quality, availability, and geographic granularity present real challenges, ones that likely affect broader public health research as well.
-
----
