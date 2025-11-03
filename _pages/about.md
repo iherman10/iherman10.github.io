@@ -36,4 +36,4 @@ From 2020 to 2025, I worked as a data analyst at Pinterest on the Ads Measuremen
 
 Currently, I am pursuing a master's degree in data science at The University of Pennsylvania. My interests lie in the fields of causal inference and experimentation.
 
-When I'm not working, you can find me testing new recipes in the kitchen or taking pictures with my film camera. Check out my photo portfolio [here](https://www.isaacherman.com/).
+When I'm not working, you can find me testing new recipes in the kitchen or taking pictures with my film camera. Check out my photo portfolio [here](https://www.isaacherman.com/). test
