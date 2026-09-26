@@ -1,0 +1,444 @@
+/* ---------- Theme tokens ---------- */
+
+:root {
+  --bg: #fbfbfa;
+  --text: #1d1d1b;
+  --muted: #6b6a65;
+  --border: #e5e4e0;
+  --surface: #f2f1ee;
+  --accent: #2b5bc8;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius: 8px;
+  --page-width: 880px;
+  --prose-width: 680px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #161719;
+    --text: #e4e4e1;
+    --muted: #9a9994;
+    --border: #2c2d30;
+    --surface: #1f2023;
+    --accent: #8db1ff;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #161719;
+  --text: #e4e4e1;
+  --muted: #9a9994;
+  --border: #2c2d30;
+  --surface: #1f2023;
+  --accent: #8db1ff;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.page {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- Top bar & footer ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.home-link {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+}
+
+.theme-toggle svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show the icon for the theme you'd switch to. */
+.icon-sun,
+[data-theme='dark'] .icon-moon {
+  display: none;
+}
+
+[data-theme='dark'] .icon-sun {
+  display: block;
+}
+
+.footer {
+  margin-top: 96px;
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Home: intro ---------- */
+
+.intro {
+  max-width: var(--prose-width);
+  padding: 40px 0 56px;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+.tagline {
+  margin: 4px 0 20px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.bio p {
+  margin: 0 0 1em;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- Home: project grid ---------- */
+
+.section-title {
+  margin: 0 0 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: inherit;
+}
+
+.card:hover {
+  text-decoration: none;
+  border-color: var(--muted);
+}
+
+.card-thumb {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 18px 18px;
+}
+
+.card-title {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.card-summary {
+  flex: 1;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ---------- Project page ---------- */
+
+article {
+  max-width: var(--prose-width);
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.back {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.project-header {
+  margin: 24px 0 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-header h1 {
+  margin: 0 0 8px;
+  font-size: 2.1rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+/* ---------- Rendered Markdown ---------- */
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose h2 {
+  margin: 2.2em 0 0.6em;
+  font-size: 1.45rem;
+}
+
+.prose h3 {
+  margin: 1.8em 0 0.5em;
+  font-size: 1.15rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre,
+.prose table,
+.prose figure {
+  margin: 0 0 1.25em;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+
+.prose li + li {
+  margin-top: 0.3em;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+.prose img {
+  margin: 1.5em auto;
+  border-radius: var(--radius);
+}
+
+.prose blockquote {
+  padding-left: 1em;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+}
+
+.prose hr {
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}
+
+.prose :not(pre) > code {
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+.prose pre {
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* Wide tables scroll sideways instead of stretching the page on phones. */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.prose th,
+.prose td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.prose th[align='right'],
+.prose td[align='right'] {
+  text-align: right;
+}
+
+.prose th[align='center'],
+.prose td[align='center'] {
+  text-align: center;
+}
+
+.prose th {
+  font-weight: 600;
+  border-bottom-color: var(--muted);
+}
+
+/* Display math can be wider than a phone screen. */
+.prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+
+/* ---------- Code highlighting (Shiki dual themes) ---------- */
+
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+[data-theme='dark'] .astro-code,
+[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  .intro {
+    padding: 24px 0 40px;
+  }
+
+  .intro h1 {
+    font-size: 1.9rem;
+  }
+
+  .project-header h1 {
+    font-size: 1.7rem;
+  }
+}

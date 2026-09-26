@@ -1,0 +1,13 @@
+# Dependencies and build output (recreated by `npm ci` / `npm run build`)
+node_modules/
+dist/
+.astro/
+
+# Secrets — nothing uses these yet, but never commit one if it appears
+.env
+.env.*
+
+# Local-only settings and junk
+.claude/settings.local.json
+.DS_Store
+*.log

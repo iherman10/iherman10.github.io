@@ -1,0 +1,36 @@
+---
+import 'katex/dist/katex.min.css';
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }) => !data.draft);
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { title, summary, date, tags, links } = project.data;
+const { Content } = await render(project);
+const dateLabel = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+---
+
+<Base title={title} description={summary}>
+  <article>
+    <a href="/" class="back">← All projects</a>
+    <header class="project-header">
+      <h1>{title}</h1>
+      <p class="meta">
+        <time datetime={date.toISOString()}>{dateLabel}</time>
+        {links.map((link) => <><span aria-hidden="true">·</span><a href={link.url}>{link.label}</a></>)}
+      </p>
+      {tags.length > 0 && (
+        <ul class="tags">
+          {tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      )}
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>
