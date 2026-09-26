@@ -10,6 +10,7 @@ export default defineConfig({
   // URLs from the old al-folio site, kept alive so existing links don't 404.
   redirects: {
     '/projects/air_quality_geo_experiments': '/projects/aqi-geo-experiments/',
+    '/projects/cis-5190-news-classifier': '/projects/headline-classifier/',
     '/projects': '/',
     '/cv': '/',
   },
