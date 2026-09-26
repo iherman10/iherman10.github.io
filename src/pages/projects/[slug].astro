@@ -9,9 +9,12 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { title, summary, date, tags, links } = project.data;
+const { title, summary, date, authors, tags, links } = project.data;
 const { Content } = await render(project);
 const dateLabel = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+// "A", "A and B", "A, B, and C"
+const byline =
+  authors.length <= 2 ? authors.join(' and ') : `${authors.slice(0, -1).join(', ')}, and ${authors.at(-1)}`;
 ---
 
 <Base title={title} description={summary}>
@@ -19,6 +22,7 @@ const dateLabel = date.toLocaleDateString('en-US', { year: 'numeric', month: 'lo
     <a href="/" class="back">← All projects</a>
     <header class="project-header">
       <h1>{title}</h1>
+      {authors.length > 0 && <p class="byline">By {byline}</p>}
       <p class="meta">
         <time datetime={date.toISOString()}>{dateLabel}</time>
         {links.map((link) => <><span aria-hidden="true">·</span><a href={link.url}>{link.label}</a></>)}

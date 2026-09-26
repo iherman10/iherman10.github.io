@@ -42,11 +42,14 @@ src/content/projects/churn-model/
 title: Customer Churn Prediction
 summary: One sentence shown on the tile.
 date: 2026-05-01            # tiles are sorted newest first
+authors: [Isaac Herman, Katie Steele]  # optional, for group projects; shown as "By ..." under the title
 tags: [python, xgboost]
 thumbnail: ./thumbnail.png  # optional
 links:                      # optional, shown under the title
   - label: Code
     url: https://github.com/...
+  - label: Paper              # optional, e.g. a PDF of the write-up
+    url: https://...
 draft: false                # true hides it from the site
 ---
 ```
